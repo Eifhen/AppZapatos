@@ -1,0 +1,409 @@
+
+/**************************************
+    NOTA
+    No estoy utilizando todos los estilos dispuestos
+    en este archivo, algunos estilos los utilicé para
+    hacer algunas pruebas y no los eliminé.
+
+/*************************************/
+:root {
+    
+    --purple:#A626D3;
+    --white: #faf0e6;
+    --whiter:#F5F7FB;
+    --slider-text:white;
+    --blue-royal:#293264;
+    --blue-crown:#4D5B9E;
+    --blue:#194a8d;
+    --yellow-blob:#FFFAD1;
+    --blue-blob:#DEEBF8;
+    --yellow:#fecf6a;
+    --red-wine:#df1c44;
+    --dark-prestige:#282D35;
+    --dark-night:#23252C;
+    --darker:#1A1B21;
+    --darker-dark:#161619;
+    --dark-react:#21222A;
+    --dark-black-night: #2B283A;
+    --dark-gradient:linear-gradient(90deg, #212529 1.18%, #495057 100%);
+}
+
+html {
+    scroll-behavior: smooth !important;
+    overflow-x:hidden;
+}
+
+.pointer{
+    cursor:pointer;
+}
+
+
+/************************************
+I - Background & Text-Color Management
+*************************************/
+
+
+
+.bg-purple-gradient{
+    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+}
+
+.bg-blue-gradient{
+    background: linear-gradient(90deg, #194a8d 1.18%, #75c0e0 100%);
+}
+
+.bg-dark-gradient{
+    background: linear-gradient(90deg, #212529 1.18%, #495057 100%);
+}
+
+.bg-purple{
+    background-color:var(--purple);
+}
+
+.bg-blue{
+    background-color:var(--blue) !important;
+}
+
+.bg-dark-react{
+    background-color:var(--dark-react);
+}
+
+.bg-darker{
+    background-color: var(--darker);
+}
+
+.bg-darker-dark{
+    background-color:var(--darker-dark);
+}
+
+.bg-dark-night{
+    background-color:var(--dark-night);
+}
+
+.bg-dark-prestige{
+    background-color:var(--dark-prestige);
+}
+
+.bg-dark-green{
+    background-color:#0B2434;
+}
+
+.bg-orange{
+    background-color:orange;
+}
+
+
+.bg-whites{
+    background-color:#f5f5f5;
+}
+
+.bg-whiter{
+    background-color:var(--whiter);
+}
+
+.bg-dice-active{
+    /* #59E391 */
+    background-color: #fecf6a;
+}
+
+.bg-blue-royal{
+    background-color:var(--blue-royal) !important;
+}
+
+.bg-blue-crown{
+    background-color:var(--blue-crown) !important;
+}
+
+.bg-yellow{
+    background-color:var(--yellow) !important;
+}
+
+.bg-red-wine{
+    background-color:var(--red-wine);
+}
+
+.text-blue-royal{
+    color:var(--blue-royal) !important;
+}
+
+.text-whiter{
+    color:var(--whiter) !important;
+}
+.text-yellow{
+    color: var(--yellow) !important;
+    
+}
+
+.text-red-wine{
+    color:var(--red-wine);
+}
+
+/************************************
+II Height and Width Management
+*************************************/
+
+.h-full {
+    min-height:100vh;
+}
+
+.h-min-15vh{
+    min-height:15vh !important;
+}
+
+.h-min-30vh{
+    min-height:30vh !important;
+}
+
+.h-min-90vh{
+    min-height:90vh;
+}
+
+.h-min-70vh{
+    min-height:70vh;
+}
+
+.h-min-60vh{
+    min-height:60vh !important;
+}
+
+.h-min-50vh{
+    min-height:50vh;
+}
+
+.h-30vh{
+    height:30vh !important;
+}
+
+.h-50vh{
+    height:50vh !important;
+}
+
+.h-60vh{
+    height:60vh !important;
+}
+
+.h-70vh{
+    height:70vh !important;
+}
+
+/************************************
+II Text Management
+*************************************/
+
+h6{
+    font-size: clamp(0.8rem, 2vw, 1rem);
+}
+
+.italic{
+    font-style:italic !important;
+}
+
+.icon{
+    font-size: clamp(0.9rem, 2vw, 1rem);;
+}
+
+.stock{
+    font-size: clamp(0.7rem, 2vw, 1rem);
+}
+
+.text-intro{
+    font-style: italic !important;
+    font-size:15px !important;
+    font-weight:normal;
+    padding-top:0px !important;
+    padding-left:20px !important;
+}
+
+.display-6{
+    font-size: clamp(1em, 2vw, 1.3em);
+    /*font-size:1.3em !important;*/
+}
+
+.display-4 {
+    font-size: clamp(2.5em, 2vw, 3.5em);
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.display-5{
+    font-size: calc(1.425rem + 2.1vw);
+    /* font-size:3em; */
+    font-weight: 300;
+    line-height: 1.2;
+}
+
+.description {
+    font-size:clamp(0.9rem, 2vw, 1rem);
+    /* text-align:justify; */
+}
+
+.text-justify{
+    text-align:justify;
+}
+
+.lead {
+    font-size: clamp(1rem, 2vw, 1.25rem);
+    font-weight: 300;
+}
+
+@media (min-width: 1200px){
+    .title-product {
+        font-size: 2rem !important;
+        border-bottom: var(--yellow) solid;
+        display:inline-block;
+        font-style:italic;
+    }
+}
+
+.title-product {
+    font-size: clamp(1.3rem, 2vw, 2rem);
+    display:inline-block;
+    font-style:italic;
+    font-weight: 450;
+    line-height: 1.2;
+}
+
+.text-product{
+    font-weight: 380 !important;
+    line-height: 1.2 !important;
+    font-size:1.2em !important;
+}
+
+.user-management, .product-management {
+    font-size: clamp(0.9rem, 2vw, 1rem) !important;
+    font-weight: 300;
+    line-height: 1.3;
+}
+
+@media(max-width:600px){
+    .user-management, .product-management {
+        display:flex;
+        padding-left:10% !important;
+        padding-right:10% !important;
+        line-height:1;
+    }
+}
+
+/************************************
+III Border Management
+*************************************/
+
+.border-diagonal{
+    border-left: 30px solid transparent;
+    border-bottom: 30px solid var(--dark-black-night); 
+    /* background-color:slateblue; */
+    height:0;
+    line-height: 50px; 
+    padding-bottom: 10px; 
+    display: block;
+}
+
+/************************************
+IV img Management
+*************************************/
+.icon-box {
+    z-index:2;
+    position:relative;
+    height:0;
+    top:1%;
+
+}
+
+.image{
+    height:100%;
+    width:100%;
+}
+
+.img-card{
+    height:30vh;
+}
+
+@media (min-width:1350px){
+    .img-card {
+       height:20vh;
+    }
+}
+
+@media(max-width:600px){
+    .img-card {
+        height:20vh;
+     }
+}
+
+@media(max-width:999px) and (min-height:1180px){
+    .img-card {
+        height:15vh;
+     }
+}
+
+@media(min-width:610px) and (max-height:500px){
+    .img-card {
+        height:40vh;
+     }
+}
+
+.imgBox{
+    height:30vh !important;
+    width:20vw !important;
+}
+
+@media screen and (max-width:800px){
+    .imgBox{
+        min-height:50vh !important;
+        min-width:100% !important;
+    }
+}
+
+.wallpaper {
+    background-image: url('./wallpaper/wallpaper03.jpg');
+    overflow:hidden;
+    background-size: auto;
+    background-repeat: no-repeat;
+    animation-name: backgroundEffect;
+    animation-duration: 15s;
+    animation-iteration-count: infinite;
+}
+
+@keyframes backgroundEffect {
+    0% {background-position: 0% 0%}
+    25% {background-position: 30% 10%}
+    50% {background-position: 0 30%}
+    75% {background-position: 30% 30%}
+    100% {background-position: 0% 0%}
+  }
+
+.opacity-1{
+    z-index:2;
+    opacity:0.98;
+}
+
+/************************************
+V Scroll Management
+*************************************/
+
+::-webkit-scrollbar {
+    width: 12px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dark-night);
+    border-radius: 20px;
+}
+
+.scroll-control {
+    overflow-y:scroll;
+}
+
+/************************************
+VI Rounded Management
+*************************************/
+
+.r-pill-s{
+    border-top-left-radius: 50rem;
+    border-bottom-left-radius: 50rem;
+}
+
+.r-pill.e{
+    border-top-right-radius: 50rem;
+    border-bottom-right-radius: 50rem;
+}
