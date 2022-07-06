@@ -31,17 +31,30 @@
             
             $tipo = "zapato";
             $arr = array_change_key_case($data, CASE_LOWER);
-            $add = (object) $arr;
+            if(!isset($arr['id'])){
+                // el producto es nuevo por lo tanto no tiene id
+                $add = (object) $arr;
+                $this->product = new Product(
+                    (string) $add->name,
+                    (int) $add->stock,
+                    (string) $image_name,
+                    (string) $tipo,
+                );
 
-            $this->product = new Product(
-                (string) $add->name,
-                (int) $add->stock,
-                (string) $image_name,
-                (string) $tipo,
-                (int) $add->id
-            );
+                return $this->product;
+            }
+            else {
+                $add = (object) $arr;
+                $this->product = new Product(
+                    (string) $add->name,
+                    (int) $add->stock,
+                    (string) $image_name,
+                    (string) $tipo,
+                    (int) $add->id
+                );
 
-            return $this->product;
+                return $this->product;
+            }
         }
 
     }

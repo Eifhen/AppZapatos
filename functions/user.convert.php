@@ -34,14 +34,26 @@
             // convert all the keys in the array to Uppercase or Lowercase.
 
             $arr =  array_change_key_case($data, CASE_LOWER);
-            $add = (object)$arr;
-            $this->user = new User(
-                (string) $add->nombre,
-                (string) $add->apellido,
-                (int) $add->edad,
-                (int) $add->id
-            );
-            return $this->user;
+            if(!isset($arr['id'])){
+                // el usuario es nuevo por lo tanto no tiene id
+                $add = (object)$arr;
+                $this->user = new User(
+                    (string) $add->nombre,
+                    (string) $add->apellido,
+                    (int) $add->edad
+                );
+                return $this->user;
+            }
+            else{
+                $add = (object)$arr;
+                $this->user = new User(
+                    (string) $add->nombre,
+                    (string) $add->apellido,
+                    (int) $add->edad,
+                    (int) $add->id
+                );
+                return $this->user;
+            }
         }
 
     }
