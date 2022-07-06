@@ -16,7 +16,7 @@ están:
 * Php (back-end)
 * Mysql (base de datos)      
 
-En el fichero "./database" se encuentra un archivo ".bak"
+En el fichero "./database" se encuentra un archivo "database.sql"
 el cual nos permitirá recrear la base de datos que estamos utilizando.
 
 Luego de recrear la base de datos deberá ajustar la cadena de 
