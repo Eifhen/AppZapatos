@@ -3,17 +3,21 @@
     $path = dirname(__DIR__);
     include_once("$path/database/database.manager.php");
     include_once("$path/functions/user.convert.php");
+    include_once("$path/functions/redirection.manager.php");
 
     class UserController {
 
         private DataBaseManager $db;
         private UserModelManager $user;
-
+        private RedirectionManager $redirect;
+        private string $go;
+        
         public function __construct(){
 
             $this->db = new DataBaseManager();
             $this->user = new UserModelManager();
-
+            $this->redirect = new RedirectionManager(true);
+            $this->go = $this->redirect->path;
         }
 
         // ##### REQUESTs Handler #####
@@ -68,7 +72,8 @@
                     )";
             
             $this->db->run()->query($sql);
-            header('Location:http://localhost:8080/Proyect_03/views/user/home.php#main');
+           
+            header("Location:{$this->go}/views/user/home.php#main");
             exit;
         }
 
@@ -77,13 +82,13 @@
             $user_id = $_GET['id'];
             $sql = "DELETE FROM usuarios WHERE ID = $user_id";
             $this->db->run()->query($sql);
-            header('Location:http://localhost:8080/Proyect_03/views/user/home.php?deleted=true#main');
+            header("Location:{$this->go}/views/user/home.php?deleted=true#main");
             exit;
         }
 
         public function editUser(){
             $user_id = $_GET['id'];
-            header("Location:http://localhost:8080/Proyect_03/views/user/edit.php?id=$user_id");
+            header("Location:{$this->go}/views/user/edit.php?id=$user_id");
             exit;
         }
 
@@ -98,7 +103,7 @@
                     
             $this->db->run()->query($sql);
 
-            header("Location:http://localhost:8080/Proyect_03/views/user/home.php#main");
+            header("Location:{$this->go}/views/user/home.php#main");
             exit;
         }
 

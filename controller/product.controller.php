@@ -4,17 +4,22 @@
     include_once("$path/database/database.manager.php");
     include_once("$path/functions/product.convert.php");
     include_once("$path/functions/image.validation.php");
-
+    include_once("$path/functions/redirection.manager.php");
+    
     class ProductController{
 
         private DataBaseManager $db;
         private ProductModelManager $product;
         private ImageValidation $img;
+        private RedirectionManager $redirect;
+        private string $go;
 
         public function __construct(){
             $this->db = new DataBaseManager();
             $this->product = new ProductModelManager();
             $this->img = new ImageValidation();
+            $this->redirect = new RedirectionManager(true);
+            $this->go = $this->redirect->path;
         } 
 
         // ##### REQUESTs Handler #####
@@ -84,7 +89,7 @@
                         )";
 
                 $this->db->run()->query($sql);
-                header("Location:http://localhost:8080/Proyect_03/views/product/home.php#items");   
+                header("Location:{$this->go}/views/product/home.php#items");   
                 exit;        
             }
 
@@ -96,13 +101,13 @@
             $id_prod = $_GET['id'];
             $sql = "DELETE FROM productos WHERE ID = $id_prod";
             $this->db->run()->query($sql);
-            header("Location:http://localhost:8080/Proyect_03/views/product/home.php?deleted=true#items");  
+            header("Location:{$this->go}/views/product/home.php?deleted=true#items");  
             exit;
         }
 
         public function editProduct(){
             $id_product = $_GET['id'];
-            header("Location:http://localhost:8080/Proyect_03/views/product/edit.php?id=$id_product");  
+            header("Location:{$this->go}/views/product/edit.php?id=$id_product");  
             exit;
         }
 
@@ -138,7 +143,7 @@
             }
 
             $this->db->run()->query($sql);
-            header("Location:http://localhost:8080/Proyect_03/views/product/home.php#items");   
+            header("Location:{$this->go}/views/product/home.php#items");   
             exit;
         }
     }
