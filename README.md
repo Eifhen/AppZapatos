@@ -5,7 +5,7 @@ Este proyecto se conecta a una  base de datos en mysql para almacenar la informa
 la idea de este proyecto es simular un sistema de gestión de usuarios y 
 de gestión de productos, en el mismo podrás registrar usuarios, así como también editarlos 
 y eliminarlos; también podrás registrar productos, en este caso lo ideal es que sean zapatos, 
-editar productos y eliminarlos. dentro de las tecnologías utilizadas
+editar productos y eliminarlos. Dentro de las tecnologías utilizadas
 están: 
 
 * HTML5 
